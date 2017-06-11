@@ -2,7 +2,6 @@
 
 import numpy as np
 
-
 def hanoi(n, mat, arr, fr, to, spare):
 
 	if n == 1:
@@ -28,8 +27,6 @@ def hanoi(n, mat, arr, fr, to, spare):
 		hanoi(n-1, mat, arr, spare, to, fr)
 
 		return arr
-
-
 
 
 arr = np.array([[0, 1, 0],
