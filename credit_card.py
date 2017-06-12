@@ -78,25 +78,22 @@ ax1 = plt.subplot2grid((2,1), (0,0), rowspan=1, colspan=1)
 plt.title("Credit Card Balances-Payments", fontsize=19, color="#3f6379")
 plt.xlabel("Remaining Balances", fontsize=14, color="#643022")
 plt.ylabel("Payment($, USD)", fontsize=14, color="#643022")
+
 ax2 = plt.subplot2grid((2,1), (1,0), rowspan=1, colspan=1)
 
 plt.xlabel("Steps", fontsize=14, color="#643022")
 plt.ylabel("Payment($, USD)", fontsize=14, color="#643022")
 
-print(len(final_pays_arr))
 for i in range(len(rem_balance_arr)):
   ax1.scatter(rem_balance_arr[i], final_pays_arr[i], marker="X", label=i)
 ax1.plot(rem_balance_arr, final_pays_arr, lw=0.5, ls=":", color="#31c1fa")
 
-
 plt.ylim(lb, hb)
-
 
 ax2.scatter([s for s in range(1, steps)], final_pays_arr, color="#ff6379", marker="X")
 ax2.plot([s for s in range(1, steps)], final_pays_arr, lw=1.5, color="#ff6379")
 
 ax2.text(0.425, 0.83,"Bisection-Search", transform=plt.gca().transAxes, fontdict=dict(size=18, color="#3f6379"))
-
 ax2.annotate("upper-bound", xy=(0, hb-1000), xytext=(1.5, hb-8000), arrowprops=dict(facecolor = "green"))
 ax2.annotate("lower-bound", xy=(0, lb+1000), xytext=(1.5, lb+8000), arrowprops=dict(facecolor = "green"))
 
@@ -104,10 +101,10 @@ ax2.annotate("lower-bound", xy=(0, lb+1000), xytext=(1.5, lb+8000), arrowprops=d
 plt.ylim(lb, hb)
 plt.xticks([5, 10, 15, 20, 25])
 
-
 ax1.grid(True)
 ax2.grid(True)
-plt.subplots_adjust(hspace=0.4)
 
+plt.subplots_adjust(hspace=0.4)
 ax1.legend(loc=3, ncol=4, fontsize=8.5).get_frame().set_alpha(0.6)
+
 plt.show()
