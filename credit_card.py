@@ -1,4 +1,4 @@
-"""Payment of Credit Card Balances using Bisection-Search w/ Data Visualization""""
+"""Payment of Credit Card Balances using Bisection-Search w/ Data Visualization"""
 
 import pandas as pd
 import matplotlib.pyplot as plt
